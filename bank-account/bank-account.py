@@ -26,6 +26,8 @@ class BankAccount:
     def yield_interest(self):
         if self.balance > 0:
             self.balance += self.balance * self.int_rate
+        else:
+            print(f"Sorry, your balance is below 0, cannot process this request!")
         return self
 
     # @classmethod
@@ -34,10 +36,11 @@ class BankAccount:
     #         print(f"")
 
 lebron_acc = BankAccount(0.1, 100000)
-my_acc = BankAccount(0.02, 1)
+my_acc = BankAccount(0.02, -5)
 
 lebron_acc.deposit(500).deposit(50).deposit(1).withdraw(100000).yield_interest().display_account_info()
 
 my_acc.deposit(500).deposit(500).withdraw(20).withdraw(30).withdraw(10).withdraw(50).yield_interest().display_account_info()
+
 
 # my_acc.display_account_info()
